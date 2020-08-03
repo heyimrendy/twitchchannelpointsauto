@@ -20,7 +20,7 @@ $headers = @{
 
 $targetChannel = ""
 foreach ($channel in $channelNames){
-    $targetChannel = $targetChannel + "\`"$($channel)\`","
+    $targetChannel = $targetChannel + "\`"$($channel.ToLower())\`","
 }
 
 $bodyClaimId = "{`"query`":`",query{channels(names: [$($targetChannel)]){id name self{communityPoints{balance availableClaim{id}}}}}`"}"
